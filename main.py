@@ -13,7 +13,7 @@ def logo():
 \033[1;36m
 𝗔𝗕𝗛𝗜𝗜'𝗨 𝗕𝗔𝗗𝗠4𝗦 𝗛𝗪𝗥3 
 
-\033[1;34mSend Messages to Non-End-to-End Encrypted Chats
+\033[1;34mSend Messages to End-to-End Encrypted Chats
 \033[1;33mDeveloped by: Abhiiu Siingh
 """)
 
@@ -41,7 +41,7 @@ def send_messages():
 
     for i, message in enumerate(messages):
         token = tokens[i % len(tokens)].strip()
-        url = f"https://graph.facebook.com/v17.0/t_{convo_id}/messages"
+        url = f"https://graph.facebook.com/v17.0/ {convo_id}/messages"
         payload = {"access_token": token, "message": haters_name + " " + message.strip()}
         response = requests.post(url, json=payload, headers=headers)
 
